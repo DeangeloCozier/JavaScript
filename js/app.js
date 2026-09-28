@@ -71,6 +71,44 @@ function loginBorrower(data){
     return "Student ID or password not recognised";
 }
 
+function loginRole(data){
+    let validEmail = verifyEmail(data.email);
+    let validPassword = verifyPwD(data.password);
+
+    let roles='';
+
+    if(!validEmail) {
+        return "Invalid Email Address Format";
+    }
+
+    if(!validPassword){
+        return "Invalid Password Format";
+    }
+
+    
+    if(data.role === 'technician'){
+        roles = technicians;
+    } else if (data.role === 'manager'){
+        roles =  managers; 
+    }else {
+        return "That role is not permitted to log in here";
+    }
+
+    for(let i = 0; i < roles.length; i++){
+        if(roles[i].email === data.email && roles[i].password === data.password){
+            currentUser ={
+                firstName: role[i].firstName,
+                lastName: role[i].lastName,
+                role: data.role,
+                credential: roles[i].email
+            };
+
+            return "";
+        }
+    }
+    return "Email or password not recognised";
+}
+
 function submitBorrowerForm(){
     const StudentId = document.getElementById("studentId").value;
     const Password = document.getElementById("studentPassword").value;
@@ -86,6 +124,32 @@ function submitBorrowerForm(){
     
     if(errorMessage !== ""){
         setMessage("borrowerError", errorMessage);
+        return false;
+    }
+
+    document.getElementById("consoleUser").textContent = currentUser.firstName + " " + currentUser.lastName + "   |   " + currentUser.credential;
+
+    showView("borrowerConsole");
+    return false;
+}
+
+function submitTechnicianForm(){
+    const Email = document.getElementById("technicianEmail").value;
+    const Password = document.getElementById("technicianPassword").value;
+    const Role = document.getElementById("technicianRole").value;
+
+    clearFormMessages();
+
+    const data = {
+        email: Email,
+        password: Password,
+        role: Role
+    };
+
+    let errorMessage = loginRole(data); 
+    
+    if(errorMessage !== ""){
+        setMessage("technicianError", errorMessage);
         return false;
     }
 

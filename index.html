@@ -187,10 +187,48 @@
                 <button class="bottomButtons" type="submit">Log In</button>
             </form>
 
-            <p class="note" onclick="toggleVisibility(this, '.notice', true)">Forgot Password</p>
+            <p class="note" onclick="showView('technicianRecoveryView')">Forgot Password</p>
+        </main>
+    </section>
 
-            <div id="technicianForgot" class="notice hidden">
-                Please contact the equipment desk
+    <section id="technicianRecoveryView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> STAFF RECOVERY VIEW — REPRESENTATIVE </h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="uwiLogo.jpg" alt="Logo">   
+            </div>
+
+            <h2 class="title">Recover Account</h2>
+            <p id="technicianError" class="message error" aria-live="polite"></p>
+
+            <form onsubmit="toggleVisibility(this, '.notice', true); return false;">
+                <div class="field">
+                    <label for="technicianEmail">Email</label>
+                    <input id="technicianEmail" name="email" type="email">
+                </div>
+
+                <input type="hidden" id="technicianRole" name="role" value="technician">
+
+                <button class="bottomButtons" type="submit">Recover</button>
+            </form>
+            
+            <p class="note" onclick="showView('technicianLoginView')">Back to Login</p>
+
+            <div id="recoverPassword" class="notice hidden">
+                Demo Recovery Request accepted. No email has been sent.
                 <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
             </div>
         </main>
