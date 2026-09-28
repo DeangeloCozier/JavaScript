@@ -176,7 +176,7 @@
 
                 <div class="field">
                     <label for="technicianEmail">Email</label>
-                    <input id="technicianEmail" name="email" type="email">
+                    <input id="technicianEmail" name="email" type="text">
                 </div>
 
                 <div class="field">
@@ -214,7 +214,7 @@
             <h2 class="title">Recover Account</h2>
             <p id="technicianError" class="message error" aria-live="polite"></p>
 
-            <form onsubmit="toggleVisibility(this, '.notice', true); return false;">
+            <form onsubmit="return submitTechnicianRecoveryForm()">
                 <div class="field">
                     <label for="technicianEmail">Email</label>
                     <input id="technicianEmail" name="email" type="email">

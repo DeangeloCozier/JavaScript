@@ -73,9 +73,8 @@ function loginBorrower(data){
 
 function loginRole(data){
     let validEmail = verifyEmail(data.email);
-    let validPassword = verifyPwD(data.password);
-
-    let roles='';
+    let validPassword = verifyPwd(data.password);
+    let roles;
 
     if(!validEmail) {
         return "Invalid Email Address Format";
@@ -97,8 +96,8 @@ function loginRole(data){
     for(let i = 0; i < roles.length; i++){
         if(roles[i].email === data.email && roles[i].password === data.password){
             currentUser ={
-                firstName: role[i].firstName,
-                lastName: role[i].lastName,
+                firstName: roles[i].firstName,
+                lastName: roles[i].lastName,
                 role: data.role,
                 credential: roles[i].email
             };
@@ -155,8 +154,65 @@ function submitTechnicianForm(){
 
     document.getElementById("consoleUser").textContent = currentUser.firstName + " " + currentUser.lastName + "   |   " + currentUser.credential;
 
-    showView("borrowerConsole");
+    showView("");
     return false;
+}
+
+function findLostPassword(data){
+    const successMessage = document.getElementById("recoverPassword");
+    let validEmail = verifyEmail(data.email);
+    let roles;
+
+    if(!validEmail) {
+        return "Invalid Email Address Format";
+    }
+
+    if(data.role === 'technician'){
+        roles = technicians;
+    } else if (data.role === 'manager'){
+        roles =  managers; 
+    }else {
+        return "That role is not permitted to log in here";
+    }
+
+    for( let i = 0; i < roles.length; i++){
+        if(roles[i].email === data.email){
+            currentUser ={
+                firstName: roles[i].firstName,
+                lastName: roles[i].lastName,
+                role: data.role,
+                credential: roles[i].email
+            };
+            return ""
+        }
+    }
+    return "No account associated with this email";
+
+}
+
+function submitTechnicianRecoveryForm(){
+    const Email = document.getElementById("technicianEmail").value;
+    const Role = document.getElementById("technicianRole").value;
+
+    clearFormMessages();
+
+    const data = {
+        email: Email,
+        role: Role
+    };
+
+    let errorMessage = loginRole(data); 
+    
+    if(errorMessage !== ""){
+        setMessage("technicianError", errorMessage);
+        return false;
+    }
+
+    document.getElementById("consoleUser").textContent = currentUser.firstName + " " + currentUser.lastName + "   |   " + currentUser.credential;
+
+    showView("");
+    return false;
+
 }
 
 function startApp(){
