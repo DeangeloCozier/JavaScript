@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Equipment Loan Desk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="startApp();">
+
+    <section id="welcomeView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> WELCOME VIEW </h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="uwiLogo.jpg" alt="Logo">   
+            </div>
+
+            <p class="description">Borrow cameras, microphones and projectors for coursework.</p>
+
+            <div class="loginButtons">
+                <button type="button" onclick="showView('borrowerLoginView')">Borrower Login</button>
+                <button type="button" onclick="showView('technicianLoginView')">Technician Login</button>
+                <button class="manager" type="button" onclick="showView('managerLoginView')">Manager Login</button>
+            </div>
+        </main>
+    </section>
+
+    <section id="borrowerLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — REPRESENTATIVE</h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="uwiLogo.jpg" alt="Logo">   
+            </div>
+
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+            </div>
+
+             <div id="loginMenu" class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+            </div>
+
+            <h2 class="title">Borrower Login</h2>
+            <p id="borrowerError" class="message error" aria-live="polite"></p>
+
+            <form onsubmit="return submitBorrowerForm()">
+                <div class="field">
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" name="studentId" type="text">
+                </div>
+
+                <div class="field">
+                    <label for="studentPassword">Password</label>
+                    <input id="studentPassword" name="studentPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <p class="note" onclick="toggleVisibility(this, '.notice', true)">Forgot Password</p>
+
+            <div id="forgotPassword" class="notice hidden">
+                Please contact the equipment desk
+                <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="borrowerConsole" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>BORROWER CONSOLE</h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+            <p class="user" id="consoleUser"></p>
+
+            <div class="logo">
+                <img src="uwiLogo.jpg" alt="Logo">   
+            </div>
+
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+                <button type="button" onclick="showView('welcomeView')">Sign Out</button>
+            </div>
+
+            <div class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+            </div>
+
+            <h2 class="title">Borrower Console</h2>
+
+            <div class="twoColumn">
+                <button>My Account</button>
+                <button>Equipment Catalogue</button>
+                <button>My Loan Requests</button>
+                <button>My Collections</button>
+            </div>
+
+            <p class="featureNote">This feature will be available in a later assignment.</p>
+        </main>
+    </section>
+
+    <section id="technicianLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — TECHNICIAN</h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="uwiLogo.jpg" alt="Logo">   
+            </div>
+
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+            </div>
+
+             <div id="technicianMenu" class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+            </div>
+            
+
+            <h2 class="title">Technician Login</h2>
+            <p id="technicianError" class="message error" aria-live="polite"></p>
+
+            <form onsubmit="return submitTechnicianForm()">
+                <input type="hidden" id="technicianRole" name="role" value="technician">
+
+                <div class="field">
+                    <label for="technicianEmail">Email</label>
+                    <input id="technicianEmail" name="email" type="email">
+                </div>
+
+                <div class="field">
+                    <label for="technicianPassword">Password</label>
+                    <input id="technicianPassword" name="technicianPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <p class="note" onclick="toggleVisibility(this, '.notice', true)">Forgot Password</p>
+
+            <div id="technicianForgot" class="notice hidden">
+                Please contact the equipment desk
+                <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
