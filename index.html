@@ -26,7 +26,16 @@
             <p class="campus">U.W.I Cave Hill Campus</p>
 
             <div class="logo">
-                <img src="uwiLogo.jpg" alt="Logo">   
+                <img src="logo.png" alt="Logo">   
+            </div>
+            
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+            </div>
+
+             <div id="loginMenu" class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
             </div>
 
             <p class="description">Borrow cameras, microphones and projectors for coursework.</p>
@@ -56,7 +65,7 @@
             <p class="campus">U.W.I Cave Hill Campus</p>
 
             <div class="logo">
-                <img src="uwiLogo.jpg" alt="Logo">   
+                <img src="logo.png" alt="Logo">   
             </div>
 
             <div class="menuButtons">
@@ -65,7 +74,7 @@
 
              <div id="loginMenu" class="menuList hidden">
                 <button type="button" onclick="showView('welcomeView')">Home</button>
-                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
             </div>
 
             <h2 class="title">Borrower Login</h2>
@@ -94,7 +103,7 @@
         </main>
     </section>
 
-    <section id="borrowerConsole" class="view">
+    <section id="borrowerConsoleView" class="view">
         <div class="top-bar">
             <div class="circles">
                 <span></span>
@@ -109,32 +118,35 @@
 
             <h2>Campus Equipment Loan Desk</h2>
             <p class="campus">U.W.I Cave Hill Campus</p>
-            <p class="user" id="consoleUser"></p>
+            <p class="user" id="borrowerConsoleUser"></p>
 
             <div class="logo">
-                <img src="uwiLogo.jpg" alt="Logo">   
+                <img src="logo.png" alt="Logo">   
             </div>
 
             <div class="menuButtons">
                 <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
-                <button type="button" onclick="showView('welcomeView')">Sign Out</button>
             </div>
 
             <div class="menuList hidden">
                 <button type="button" onclick="showView('welcomeView')">Home</button>
-                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
+                <button type="button" onclick="signOut()">Sign Out</button>
             </div>
 
             <h2 class="title">Borrower Console</h2>
 
             <div class="twoColumn">
-                <button>My Account</button>
-                <button>Equipment Catalogue</button>
-                <button>My Loan Requests</button>
-                <button>My Collections</button>
+                <button onclick="toggleVisibility(this, '.notice', true)">My Account</button>
+                <button onclick="toggleVisibility(this, '.notice', true)">Equipment Catalogue</button>
+                <button onclick="toggleVisibility(this, '.notice', true)">My Loan Requests</button>
+                <button onclick="toggleVisibility(this, '.notice', true)">My Collections</button>
             </div>
 
-            <p class="featureNote">This feature will be available in a later assignment.</p>
+            <div id="borrowerConsoleMessage" class="notice hidden">
+                This feature will be available in a later assignment.
+                <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
+            </div>
         </main>
     </section>
 
@@ -155,7 +167,7 @@
             <p class="campus">U.W.I Cave Hill Campus</p>
 
             <div class="logo">
-                <img src="uwiLogo.jpg" alt="Logo">   
+                <img src="logo.png" alt="Logo">   
             </div>
 
             <div class="menuButtons">
@@ -164,7 +176,7 @@
 
              <div id="technicianMenu" class="menuList hidden">
                 <button type="button" onclick="showView('welcomeView')">Home</button>
-                <button type="button" onclick="showView('welcomeView')">Equipment Catalogue</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
             </div>
             
 
@@ -199,7 +211,7 @@
                 <span></span>
             </div>
 
-            <h1> STAFF RECOVERY VIEW — REPRESENTATIVE </h1>
+            <h1> STAFF RECOVERY VIEW — TECHNICIAN </h1>
         </div>
 
         <main>
@@ -208,19 +220,19 @@
             <p class="campus">U.W.I Cave Hill Campus</p>
 
             <div class="logo">
-                <img src="uwiLogo.jpg" alt="Logo">   
+                <img src="logo.png" alt="Logo">   
             </div>
 
             <h2 class="title">Recover Account</h2>
-            <p id="technicianError" class="message error" aria-live="polite"></p>
+            <p id="technicianRecoveryError" class="message error" aria-live="polite"></p>
 
             <form onsubmit="return submitTechnicianRecoveryForm()">
                 <div class="field">
-                    <label for="technicianEmail">Email</label>
-                    <input id="technicianEmail" name="email" type="email">
+                    <label for="technicianRecoveryEmail">Email</label>
+                    <input id="technicianRecoveryEmail" name="email" type="text">
                 </div>
 
-                <input type="hidden" id="technicianRole" name="role" value="technician">
+                <input type="hidden" id="technicianRecoveryRole" name="role" value="technician">
 
                 <button class="bottomButtons" type="submit">Recover</button>
             </form>
@@ -228,11 +240,255 @@
             <p class="note" onclick="showView('technicianLoginView')">Back to Login</p>
 
             <div id="recoverPassword" class="notice hidden">
-                Demo Recovery Request accepted. No email has been sent.
+                <span id="recoverMessage"></span>
                 <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
             </div>
         </main>
     </section>
+
+    <section id="managerLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — MANAGER</h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="logo.png" alt="Logo">   
+            </div>
+
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+            </div>
+
+             <div id="managerMenu" class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
+            </div>
+            
+
+            <h2 class="title">Manager Login</h2>
+            <p id="managerError" class="message error" aria-live="polite"></p>
+
+            <form onsubmit="return submitManagerForm()">
+                <input type="hidden" id="managerRole" name="role" value="manager">
+
+                <div class="field">
+                    <label for="managerEmail">Email</label>
+                    <input id="managerEmail" name="email" type="text">
+                </div>
+
+                <div class="field">
+                    <label for="managerPassword">Password</label>
+                    <input id="managerPassword" name="managerPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <p class="note" onclick="showView('managerRecoveryView')">Forgot Password</p>
+        </main>
+    </section>
+
+    <section id="managerRecoveryView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> STAFF RECOVERY VIEW — MANAGER </h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+
+            <div class="logo">
+                <img src="logo.png" alt="Logo">   
+            </div>
+
+            <h2 class="title">Recover Account</h2>
+            <p id="managerRecoveryError" class="message error" aria-live="polite"></p>
+
+            <form onsubmit="return submitManagerRecoveryForm()">
+                <div class="field">
+                    <label for="managerRecoveryEmail">Email</label>
+                    <input id="managerRecoveryEmail" name="email" type="text">
+                </div>
+
+                <input type="hidden" id="managerRecoveryRole" name="role" value="manager">
+
+                <button class="bottomButtons" type="submit">Recover</button>
+            </form>
+            
+            <p class="note" onclick="showView('managerLoginView')">Back to Login</p>
+
+            <div id="recoverManagerPassword" class="notice hidden">
+                <span id="recoverManagerMessage"></span>
+                <span class="closeBtn" onclick="toggleVisibility(this, '.notice', false)">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="technicianConsoleView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>TECHNICIAN CONSOLE</h1>
+        </div>
+
+        <main>
+
+            <h2>Campus Equipment Loan Desk</h2>
+            <p class="campus">U.W.I Cave Hill Campus</p>
+            <p class="user" id="technicianConsoleUser"></p>
+
+            <div class="logo">
+                <img src="logo.png" alt="Logo">   
+            </div>
+
+            <div class="menuButtons">
+                <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+            </div>
+
+            <div class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
+                <button type="button" onclick="signOut()">Sign Out</button>
+            </div>
+
+             <div class="searchRow">
+                <label for="technicianSearch">Search</label>
+                <input id="technicianSearch" type="text">
+                <button type="button" id="searchBtn">Search</button>
+            </div>
+
+            <div class="panelNav">
+                <button type="button" id="equipmentBtn" class="panelBtn" onclick="selectPanel('equipment')">Equipment</button>
+                <button type="button" id="collectionBtn" class="panelBtn" onclick="selectPanel('collection')">Collection Schedule</button>
+            </div>
+
+            <div id="consoleContent">
+            <h3 id="panelHeading" class="hidden"></h3>
+
+            <table id="equipmentTable" class="dataTable hidden">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <table id="collectionTable" class="dataTable hidden">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Borrower</th>
+                        <th>Item Code</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        </main>
+    </section>
+
+    <section id="managerConsoleView" class="view">
+    <div class="top-bar">
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h1>MANAGER CONSOLE</h1>
+    </div>
+
+    <main>
+        <h2>Campus Equipment Loan Desk</h2>
+        <p class="campus">U.W.I Cave Hill Campus</p>
+            <p class="user" id="managerConsoleUser"></p>
+
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <div class="menuButtons">
+            <button type="button" onclick="toggleVisibility(this, '.menuList')">Menu</button>
+
+            <div class="menuList hidden">
+                <button type="button" onclick="showView('welcomeView')">Home</button>
+                <button type="button" class="unclickable">Equipment Catalogue</button>
+                <button type="button" onclick="signOut()">Sign Out</button>
+            </div>
+        </div>
+
+        <div class="searchRow">
+            <label for="managerSearch">Search</label>
+            <input id="managerSearch" type="text">
+            <button type="button" onclick="toggleVisibility(this, '.featureNote', true)">Search</button>
+        </div>
+
+        <div class="panelNav">
+            <button type="button" id="borrowersBtn" class="panelBtn" onclick="selectManagerPanel('borrowers')">Borrowers</button>
+            <button type="button" id="techniciansBtn" class="panelBtn" onclick="selectManagerPanel('technicians')">Technicians</button>
+        </div>
+
+        <div id="managerContent">
+            <div class="panelHeadRow">
+                <h3 id="managerHeading" class="hidden"></h3>
+                <button type="button" id="newUserButton" class="hidden" onclick="toggleVisibility(this, '.featureNote', true)"></button>
+            </div>
+
+            <table id="borrowersTable" class="dataTable hidden">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <table id="techniciansTable" class="dataTable hidden">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <p class="featureNote hidden">This feature will be available in a later assignment.</p>
+        </div>
+    </main>
+</section>
 
     <script src="js/data.js"></script>
     <script src="js/validation.js"></script>
