@@ -25,3 +25,6 @@ th, td { border: 1px solid #c6d0d7; padding: .55rem; text-align: left; }
 th { background: #e6edf2; }
 /* CSS1: at a minimum width of 768px, set .field width to calc(50% - 0.6rem).
    Two fields and the supplied 1.2rem gap then fit on the same Flexbox row. */
+@media (min-width: 768px) {
+ .field { width: calc(50% - 0.6rem) }
+}

@@ -1,0 +1,18 @@
+# Supplied Apache 2.4 routing. Keep this file when extracting the ZIP.
+Options -Indexes -MultiViews
+Require local
+RewriteEngine On
+
+# Stored records are read through the API, not through direct file URLs.
+RewriteRule ^(?:seed|server_data)(?:/|$) - [F,END,NC]
+
+# Endpoints are relative to the folder containing this file.
+RewriteRule ^(?:health|data/(?:borrowers|technicians|managers)\.json|(?:borrower|technician|manager)/all|(?:borrower|technician)/new)/?$ api.php [END,QSA]
+
+# Serve the student's public folder at the application URL.
+RewriteRule ^$ public/index.html [END]
+RewriteRule ^public/ - [END]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [END]
+RewriteRule ^(.+)$ public/$1 [END]

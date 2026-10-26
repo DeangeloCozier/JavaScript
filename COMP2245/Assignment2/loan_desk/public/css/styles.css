@@ -1,0 +1,151 @@
+*{      margin: 0; padding: 0; box-sizing: border-box;      }
+
+:root{    --page-pad: clamp(12px, 3vw, 30px); --content-w: 700px;     }
+
+body{    font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #1f2937;         }
+
+.hidden{    display: none !important;    }
+
+.top-bar{   min-height: 44px; padding: 8px 110px; border-bottom: 2px solid #3e3e3e; background: #e2e2e2;  display: flex; align-items: center; 
+            justify-content: center; position: relative; text-align: center;    }
+
+.top-bar h1{    font-size: clamp(14px, 2.5vw, 20px);    }
+
+.circles{    position: absolute; left: 20px; top: 50%; translate: 0 -50%; display: flex; gap: 14px;    }
+
+.circles span{    width: 16px; height: 16px; border: 2px solid #777; border-radius: 50%;    }
+
+/* ---------- Page + header (menu | title | logo) ---------- */
+main{   text-align: center; padding: 0 var(--page-pad) 40px;    }
+
+.pageHeader{    display: grid; grid-template-columns: 1fr auto; grid-template-areas: "menu logo" "title title"; align-items: start; gap: 16px; padding-top: 22px;    }
+
+.menuArea{    grid-area: menu; justify-self: start; display: flex; flex-direction: column; align-items: flex-start;    }
+
+.titleBlock{    grid-area: title;    }
+
+.logo{    grid-area: logo; justify-self: end; width: clamp(56px, 12vw, 80px); aspect-ratio: 80 / 86; border: 2px solid #222; display: flex; justify-content: center; 
+          align-items: center; overflow: hidden;    }
+
+.logo img{    width: 100%; height: 100%; object-fit: contain;    }
+
+h2{    font-size: 20px;    }
+
+.campus{ margin-top: 8px; font-size: 14px;    }
+
+.user{    margin-top: 12px; font-size: 14px;    }
+
+
+/* ---------- Buttons ---------- */
+button{    width: min(400px, 100%); height: 61px; background: white; border: 2px solid #222; font-size: 17px; font-weight: bold; cursor: pointer;    }
+
+button.manager{    width: min(220px, 100%); height: 45px; font-size: 15px; font-weight: normal;    }
+
+button.bottomButtons{    width: 120px; height: 45px; font-size: 15px; font-weight: normal;    }
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {    outline: 3px solid #2563eb; outline-offset: 2px;    }
+
+button.note,
+button.closeBtn {    width: auto; height: auto; padding: 4px; border: none; background: transparent; font-size: 14px; font-weight: normal;    }
+
+/* ---------- Menu ---------- */
+.menuArea > button{    width: 120px; height: 40px; font-size: 13px; padding: 0 20px;    }
+
+.menuList{    display: flex; flex-direction: column; gap: 6px; margin-top: 6px;    }
+
+.menuList button{    width: 160px; height: 40px; font-size: 12px; border: 2px solid gray; color: gray;    }
+
+.unclickable{    cursor: default;    }
+
+
+.description{    margin-top: clamp(24px, 5vw, 48px); font-size: 15px;    }
+
+.loginButtons{    margin-top: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; align-items: center; gap: 20px;    }
+
+.title{    margin-top: clamp(28px, 6vw, 52px); margin-bottom: 8px;    }
+
+.message{    min-height: 1.25rem; margin-bottom: 20px;    }
+
+.error{    color: #b91c1c;    }
+
+.field{    display: grid; grid-template-columns: 90px 1fr; align-items: center; column-gap: 12px; max-width: 520px; margin: 0 auto 20px;    }
+
+label{    font-size: 13px; color: black; text-align: right;    }
+
+.field input,
+.searchRow input{    width: 100%; min-width: 0; height: 50px; padding: 9px 16px; border: 2px solid black; font-size: 14px; 
+                     font-family: Arial, Helvetica, sans-serif; background: #fbfcfd;    }
+
+.note{    margin-top: 38px; font-size: 14px; font-style: italic;    }
+
+.note:hover{    text-decoration: underline; cursor: pointer;    }
+
+.notice,
+.featureNote{    width: min(500px, 100%); margin: 32px auto 0; padding: 20px 16px; background: #f4f4f4; border: 2px solid #222; font-size: 14px;    }
+
+.closeBtn{    display: inline-block; margin-left: 16px; cursor: pointer; font-size: 13px;    }
+
+.closeBtn:hover{    text-decoration: underline;    }
+
+/* ---------- Borrower console ---------- */
+.twoColumn{    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 300px)); gap: 1.5rem; justify-content: center; max-width: 660px;   
+               margin: 0 auto;    }
+
+.twoColumn button{    width: 100%; height: 50px; font-size: 17px; font-weight: normal;    }
+
+/* ---------- Technician / manager consoles ---------- */
+.searchRow{    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; max-width: 800px; margin: 32px auto 0;    }
+
+.searchRow label{    width: auto;    }
+
+.searchRow input{    flex: 1 1 200px; width: auto; height: 45px;    }
+
+.searchRow button{    width: 130px; height: 45px; font-size: 14px; font-weight: normal;    }
+
+.panelNav{    display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: var(--content-w); margin: 30px auto 0;    }
+
+.panelBtn{    flex: 1 1 200px; max-width: 380px; width: auto; height: 45px; font-size: 14px; font-weight: normal; background: #fff;    }
+
+.panelBtn.selected{    background: #d9d9d9; font-weight: bold;    }
+
+#consoleContent,
+#managerContent{    width: 100%; max-width: var(--content-w); min-width: 0; margin: 30px auto 0;    }
+
+#panelHeading{    text-align: left; margin-bottom: 12px; font-size: 16px;    }
+
+.panelHeadRow{    display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; margin-bottom: 12px;    }
+
+.panelHeadRow h3{    font-size: 16px;    }
+
+.panelHeadRow button{    width: 150px; height: 40px; font-size: 13px; font-weight: normal;    }
+
+.tableScroll {    width: 100%; max-width: 100%; min-width: 0; overflow-x: auto;    }
+
+.dataTable {    width: 100%; min-width: 650px; border-collapse: collapse;    }
+
+.dataTable th,
+.dataTable td{    border: 1px solid #222; padding: 10px; text-align: left; height: 40px; overflow-wrap: anywhere;    }
+
+.dataTable thead th{    background: #fff;    }
+
+
+@media (max-width: 480px){
+    .field{
+        grid-template-columns: 1fr;   
+        row-gap: 6px;
+    }
+    label{ text-align: left; }
+}
+
+@media (max-width: 640px){
+    .top-bar{ padding: 8px 16px; }
+    .circles{ display: none; }
+}
+
+@media (min-width: 800px){
+    .menuArea{ position: relative; }
+    .menuList{ position: absolute; top: calc(100% + 6px); left: 0; z-index: 10; margin-top: 0; background: #fff; }
+}

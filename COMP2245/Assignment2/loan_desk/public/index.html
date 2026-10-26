@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Equipment Loan Desk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <section id="welcomeView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> WELCOME VIEW </h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+            <p class="description">Borrow cameras, microphones and projectors for coursework.</p>
+
+            <div class="loginButtons">
+                <button type="button" id="borrowerLoginButton">Borrower Login</button>
+                <button type="button" id="technicianLoginButton">Technician Login</button>
+                <button class="manager" type="button" id="managerLoginButton">Manager Login</button>
+            </div>
+        </main>
+    </section>
+
+    <section id="borrowerLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — REPRESENTATIVE</h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+            <h2 class="title">Borrower Login</h2>
+            <p id="borrowerError" class="message error" aria-live="polite"></p>
+
+            <form id="borrowerLoginForm">
+                <div class="field">
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" name="studentId" type="text">
+                </div>
+
+                <div class="field">
+                    <label for="studentPassword">Password</label>
+                    <input id="studentPassword" name="studentPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <button type="button" class="note" id="borrowerForgotPassword">Forgot Password</p>
+
+            <div id="forgotPassword" class="notice hidden">
+                Please contact the equipment desk
+                <span class="closeBtn">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="borrowerConsoleView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>BORROWER CONSOLE</h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                    <button type="button" class="signOutButton">Sign Out</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+                <p class="user" id="borrowerConsoleUser"></p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+            <h2 class="title">Borrower Console</h2>
+
+            <div class="twoColumn">
+                <button class="borrowerAction">My Account</button>
+                <button class="borrowerAction">Equipment Catalogue</button>
+                <button class="borrowerAction">My Loan Requests</button>
+                <button class="borrowerAction">My Collections</button>
+            </div>
+
+            <div id="borrowerConsoleMessage" class="notice hidden">
+                This feature will be available in a later assignment.
+                <span class="closeBtn">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="technicianLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — TECHNICIAN</h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+            
+
+            <h2 class="title">Technician Login</h2>
+            <p id="technicianError" class="message error" aria-live="polite"></p>
+
+            <form id="technicianLoginForm">
+                <input type="hidden" id="technicianRole" name="role" value="technician">
+
+                <div class="field">
+                    <label for="technicianEmail">Email</label>
+                    <input id="technicianEmail" name="email" type="text">
+                </div>
+
+                <div class="field">
+                    <label for="technicianPassword">Password</label>
+                    <input id="technicianPassword" name="technicianPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <p class="note" id="technicianForgotPassword">Forgot Password</p>
+        </main>
+    </section>
+
+    <section id="technicianRecoveryView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> STAFF RECOVERY VIEW — TECHNICIAN </h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+            <h2 class="title">Recover Account</h2>
+            <p id="technicianRecoveryError" class="message error" aria-live="polite"></p>
+
+            <form id="technicianRecoveryForm">
+                <div class="field">
+                    <label for="technicianRecoveryEmail">Email</label>
+                    <input id="technicianRecoveryEmail" name="email" type="text">
+                </div>
+
+                <input type="hidden" id="technicianRecoveryRole" name="role" value="technician">
+
+                <button class="bottomButtons" type="submit">Recover</button>
+            </form>
+            
+            <p class="note" id="backToTechnicianLoginButton">Back to Login</p>
+
+            <div id="recoverPassword" class="notice hidden">
+                <span id="recoverMessage"></span>
+                <span class="closeBtn">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="managerLoginView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> LOGIN VIEW — MANAGER</h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+            
+
+            <h2 class="title">Manager Login</h2>
+            <p id="managerError" class="message error" aria-live="polite"></p>
+
+            <form id="managerLoginForm">
+                <input type="hidden" id="managerRole" name="role" value="manager">
+
+                <div class="field">
+                    <label for="managerEmail">Email</label>
+                    <input id="managerEmail" name="email" type="text">
+                </div>
+
+                <div class="field">
+                    <label for="managerPassword">Password</label>
+                    <input id="managerPassword" name="managerPassword" type="password">
+                </div>
+
+                <button class="bottomButtons" type="submit">Log In</button>
+            </form>
+
+            <p class="note" id="managerForgotPassword">Forgot Password</p>
+        </main>
+    </section>
+
+    <section id="managerRecoveryView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> STAFF RECOVERY VIEW — MANAGER </h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+            <h2 class="title">Recover Account</h2>
+            <p id="managerRecoveryError" class="message error" aria-live="polite"></p>
+
+            <form id="managerRecoveryForm">
+                <div class="field">
+                    <label for="managerRecoveryEmail">Email</label>
+                    <input id="managerRecoveryEmail" name="email" type="text">
+                </div>
+
+                <input type="hidden" id="managerRecoveryRole" name="role" value="manager">
+
+                <button class="bottomButtons" type="submit">Recover</button>
+            </form>
+            
+            <p class="note" id="backTomanagerLoginButton">Back to Login</p>
+
+            <div id="recoverManagerPassword" class="notice hidden">
+                <span id="recoverManagerMessage"></span>
+                <span class="closeBtn">[Close]</span>
+            </div>
+        </main>
+    </section>
+
+    <section id="technicianConsoleView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>TECHNICIAN CONSOLE</h1>
+        </div>
+
+        <main>
+
+        <header class="pageHeader">
+            <div class="menuArea">
+                <button type="button" class="menuToggle">Menu</button>
+                <div class="menuList hidden">
+                    <button type="button" class="homeButton">Home</button>
+                    <button type="button" class="unclickable">Equipment Catalogue</button>
+                    <button type="button" class="signOutButton">Sign Out</button>
+                </div>
+            </div>
+            <div class="titleBlock">
+                <h2>Campus Equipment Loan Desk</h2>
+                <p class="campus">U.W.I Cave Hill Campus</p>
+                <p class="user" id="technicianConsoleUser"></p>
+            </div>
+
+            <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+            </div>
+        </header>
+
+             <div class="searchRow">
+                <label for="technicianSearch">Search</label>
+                <input id="technicianSearch" type="text">
+                <button type="button" id="searchButton">Search</button>
+            </div>
+
+            <div class="panelNav">
+                <button type="button" id="equipmentButton" class="panelBtn">Equipment</button>
+                <button type="button" id="collectionButton" class="panelBtn">Collection Schedule</button>
+            </div>
+
+            <div id="consoleContent">
+            <h3 id="panelHeading" class="hidden"></h3>
+
+            <div class="tableScroll">
+                <table id="equipmentTable" class="dataTable hidden">
+                    <thead>
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="tableScroll">
+                <table id="collectionTable" class="dataTable hidden">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Borrower</th>
+                            <th>Item Code</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        </main>
+    </section>
+
+    <section id="managerConsoleView" class="view">
+        <div class="top-bar">
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>MANAGER CONSOLE</h1>
+        </div>
+
+        <main>
+
+            <header class="pageHeader">
+                <div class="menuArea">
+                    <button type="button" class="menuToggle">Menu</button>
+                    <div class="menuList hidden">
+                        <button type="button" class="homeButton">Home</button>
+                        <button type="button" class="unclickable">Equipment Catalogue</button>
+                        <button type="button" class="signOutButton">Sign Out</button>
+                    </div>
+                </div>
+                <div class="titleBlock">
+                    <h2>Campus Equipment Loan Desk</h2>
+                    <p class="campus">U.W.I Cave Hill Campus</p>
+                    <p class="user" id="managerConsoleUser"></p>
+                </div>
+
+                <div class="logo">
+                <img src="logo.png" alt="Campus Equipment Loan Desk logo">
+            </div>
+            </header>
+
+            <div class="searchRow">
+                <label for="managerSearch">Search</label>
+                <input id="managerSearch" type="text">
+                <button type="button" id="managerSearchButton">Search</button>
+            </div>
+
+            <div class="panelNav">
+                <button type="button" id="borrowersButton" class="panelBtn">Borrowers</button>
+                <button type="button" id="techniciansButton" class="panelBtn">Technicians</button>
+            </div>
+
+            <div id="managerContent">
+                <div class="panelHeadRow">
+                    <h3 id="managerHeading" class="hidden"></h3>
+                    <button type="button" id="newUserButton" class="hidden"></button>
+                </div>
+
+                <div class="tableScroll">
+                    <table id="borrowersTable" class="dataTable hidden">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="tableScroll">
+                    <table id="techniciansTable" class="dataTable hidden">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <p class="featureNote hidden">
+                    This feature will be available in a later assignment.
+                </p>
+            </div>
+        </main>
+    </section>
+
+    <section id="borrowerRegistrationView" class="view">
+        <div class="top-bar">
+            <h1>BORROWER REGISTRATION</h1>
+        </div>
+
+        <main>
+            <h2 class="title">Register New Borrower</h2>
+
+            <form id="borrowerRegistrationForm"
+                action="borrower/new"
+                method="post">
+
+                <input type="hidden" name="role" value="borrower">
+
+                <div class="field">
+                    <label for="newStudentId">Student ID</label>
+                    <input id="newStudentId"
+                        name="studentId"
+                        type="text"
+                        readonly>
+
+                    <button type="button" id="generateBorrowerId">
+                        Generate
+                    </button>
+                </div>
+
+                <button type="submit">Register</button>
+                <button type="button" id="cancelBorrowerRegistration">
+                    Cancel
+                </button>
+            </form>
+        </main>
+    </section>
+
+    <section id="technicianRegistrationView" class="view">
+        <div class="top-bar">
+            <h1>TECHNICIAN REGISTRATION</h1>
+        </div>
+
+        <main>
+            <h2 class="title">Register New Technician</h2>
+
+            <form id="technicianRegistrationForm"
+                action="technician/new"
+                method="post">
+
+                <input type="hidden" name="role" value="technician">
+
+                <div class="field">
+                    <label for="newTechnicianId">Technician ID</label>
+                    <input id="newTechnicianId"
+                        name="technicianId"
+                        type="text"
+                        readonly>
+
+                    <button type="button" id="generateTechnicianId">
+                        Generate
+                    </button>
+                </div>
+
+                <button type="submit">Register</button>
+                <button type="button" id="cancelTechnicianRegistration">
+                    Cancel
+                </button>
+            </form>
+        </main>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "learner": [
+    {
+      "memberCode": "W101",
+      "firstName": "Lena",
+      "lastName": "Grant",
+      "email": "lena@example.org",
+      "password": "Workshop8!",
+      "levelCode": "intro"
+    },
+    {
+      "memberCode": "W102",
+      "firstName": "Noah",
+      "lastName": "Clarke",
+      "email": "noah@example.org",
+      "password": "Repairer9!",
+      "levelCode": "tools"
+    }
+  ],
+  "coach": [
+    {
+      "staffCode": "C201",
+      "firstName": "Maya",
+      "lastName": "King",
+      "email": "maya@example.org",
+      "password": "CoachDesk8!",
+      "levelCode": "repair"
+    },
+    {
+      "staffCode": "C202",
+      "firstName": "Liam",
+      "lastName": "Ward",
+      "email": "liam@example.org",
+      "password": "GuideDesk9!",
+      "levelCode": "design"
+    }
+  ],
+  "coordinator": [
+    {
+      "staffCode": "D301",
+      "firstName": "Rhea",
+      "lastName": "Lewis",
+      "email": "rhea@example.org",
+      "password": "CoordDesk8!"
+    },
+    {
+      "staffCode": "D302",
+      "firstName": "Omar",
+      "lastName": "Price",
+      "email": "omar@example.org",
+      "password": "FrontDesk9!"
+    }
+  ]
+}

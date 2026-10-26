@@ -4,9 +4,17 @@ let availableLocations = [], availableTracks = [];
 
 function initialize() {
     // E1: attach openBookingForm to the New booking button's click event.
+    document.getElementById("newBooking").addEventListener("click", openBookingForm);
+
     // E2: attach cancelBooking to the Cancel button's click event.
+    document.getElementById("cancelBooking").addEventListener("click", cancelBooking);
+
     // E3: attach generateBookingCode to the Generate button's click event.
+    document.getElementById("generateCode").addEventListener("click", generateBookingCode);
+
     // E4: attach handleSubmit to the form's submit event.
+    document.getElementById("bookingForm").addEventListener("submit", handleSubmit);
+
     // Supplied: type changes reload the matching tracks and clear the old ID.
     document.getElementById("participantType").addEventListener("change", changeType);
     refreshPreview();
@@ -94,6 +102,8 @@ function validateForm() {
     if (!valid) return false;
     check("bookingCode", isLabCode(fields.bookingCode, fields.participantType), "Generate a code for this participant type");
     // V3: call check for displayName using isWord(fields.displayName) and "Use letters only".
+    check("displayName", isWord(fields.displayName), "Use letters only");
+
     check("email", isLabEmail(fields.email), "Use a fictional @example.org email");
     check("passphrase", isPhrase(fields.passphrase), "Use 8 or more characters with an uppercase letter, digit and ! or *");
     check("confirmPhrase", isPhrase(fields.passphrase, fields.confirmPhrase, true), "Confirmation must match a valid passphrase");

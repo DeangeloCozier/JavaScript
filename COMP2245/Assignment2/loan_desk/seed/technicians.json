@@ -1,0 +1,28 @@
+[
+  {
+    "technicianId": "4000000101-7",
+    "firstName": "Maya",
+    "lastName": "Lewis",
+    "password": "TechDesk2026#",
+    "email": "maya@uwi.edu",
+    "address1": "12 Campus Road",
+    "address2": "",
+    "parishCode": "P08",
+    "enrollmentDate": "2024-01-15",
+    "levelCode": "T1",
+    "collectionPoint": "main-desk"
+  },
+  {
+    "technicianId": "4000000102-7",
+    "firstName": "Liam",
+    "lastName": "Grant",
+    "password": "LiamService26@",
+    "email": "liam@cavehill.uwi.edu",
+    "address1": "12 Campus Road",
+    "address2": "",
+    "parishCode": "P08",
+    "enrollmentDate": "2024-01-15",
+    "levelCode": "T2",
+    "collectionPoint": "main-desk"
+  }
+]

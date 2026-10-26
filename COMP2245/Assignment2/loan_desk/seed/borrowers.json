@@ -1,0 +1,28 @@
+[
+  {
+    "studentId": "4000000001",
+    "firstName": "Asha",
+    "lastName": "Clarke",
+    "password": "LoanDesk2026@",
+    "email": "asha@uwistudents.net",
+    "address1": "12 Campus Road",
+    "address2": "",
+    "parishCode": "P08",
+    "enrollmentDate": "2024-01-15",
+    "levelCode": "B1",
+    "collectionPoint": "main-desk"
+  },
+  {
+    "studentId": "4000000002",
+    "firstName": "Noah",
+    "lastName": "Browne",
+    "password": "NoahBorrow26#",
+    "email": "noah@uwistudents.net",
+    "address1": "12 Campus Road",
+    "address2": "",
+    "parishCode": "P08",
+    "enrollmentDate": "2024-01-15",
+    "levelCode": "B2",
+    "collectionPoint": "main-desk"
+  }
+]

@@ -46,13 +46,17 @@ function isPhrase(phrase, confirmation = "", confirm = false) {
     if (!hasUpper || !hasDigit || !hasSpecial) return false;
     if (confirm) {
         // V1: compare the phrase and confirmation exactly, then return that Boolean.
-        return false;
+        return phrase === confirmation;
     }
     return true;
 }
 
 function isNote(note, allowEmpty = false) {
     // V2: if allowEmpty is true and note.trim() is empty, return true here.
+    if(allowEmpty && note.trim() == ""){
+        return true;
+    }
+
     if (note.trim() === "") return false;
     const allowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
     for (let i = 0; i < note.length; i++) {

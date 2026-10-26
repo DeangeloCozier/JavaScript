@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop Access Lab</title><link rel="stylesheet" href="css/styles.css">
+<script src="js/data.js" defer></script><script src="js/access.js" defer></script><script src="js/app.js" defer></script></head>
+<body><header><img src="workshop.svg" alt="Community workshop" width="40" height="40"><h1>Workshop access and lists</h1></header>
+<main><p id="notice" role="status" aria-live="polite"></p>
+<section id="welcomeView"><h2>Welcome</h2><p>Practise signing in and reading workshop records. This is separate from the Lab 1 booking application.</p><button id="openLogin" type="button">Open sign in</button></section>
+<section id="loginView" hidden><h2>Sign in</h2><form id="loginForm" novalidate>
+<label for="loginRole">Workshop role</label><select id="loginRole" name="kind"><option value="learner">Learner</option><option value="coach">Coach</option><option value="coordinator">Coordinator</option></select>
+<label id="credentialLabel" for="credential">Member code</label><input id="credential" name="credential" type="text" autocomplete="off">
+<label for="loginPassword">Classroom password</label><input id="loginPassword" name="password" type="password" autocomplete="off">
+<p id="loginError" class="error" role="alert"></p><button id="signInButton" type="submit">Sign in</button><button id="openRecovery" type="button">Staff recovery example</button></form></section>
+<section id="recoveryView" hidden><h2>Simulated staff recovery</h2><form id="recoveryForm" novalidate>
+<label for="recoveryRole">Staff role</label><select id="recoveryRole"><option value="coach">Coach</option><option value="coordinator">Coordinator</option></select>
+<label for="recoveryEmail">Email</label><input id="recoveryEmail" type="email"><p id="recoveryMessage" role="status"></p>
+<button id="recoveryButton" type="submit">Check fictional email</button><button id="backToLogin" type="button">Back to sign in</button></form></section>
+<section id="learnerView" hidden><h2>Learner console</h2><p class="greeting"></p><p>Booking controls will be connected after you complete Lab 1.</p><button type="button" class="signOut">Sign out</button></section>
+<section id="coachView" hidden><h2>Coach console</h2><p class="greeting"></p><p>This example displays the signed-in coach. Workshop editing is a placeholder.</p><button type="button" class="signOut">Sign out</button></section>
+<section id="coordinatorView" hidden><h2>Coordinator console</h2><p class="greeting"></p><nav aria-label="Workshop lists"><button id="showLearners" type="button">Learners</button><button id="showCoaches" type="button">Coaches</button><button type="button" class="signOut">Sign out</button></nav>
+<div id="listPanel" hidden><h3 id="listHeading">Workshop list</h3><p id="loadingPanel" hidden role="status"></p><p id="listMessage" class="error" role="alert"></p><p id="emptyMessage"></p>
+<div class="table-scroll"><table><caption id="rosterCaption">Workshop accounts</caption><thead id="rosterHead"></thead><tbody id="rosterRows"></tbody></table></div><button id="refreshList" type="button">Refresh or Retry</button></div>
+<section class="practice"><h3>Lab test controls</h3><label for="listCase">Next list response</label><select id="listCase"><option value="normal">Normal records</option><option value="empty">Empty array</option><option value="error">Failed request</option><option value="object">Wrong data shape</option></select>
+<p>These supplied controls let you test list behaviour. They do not change the account files.</p><button id="practiceCreation" type="button">Practise refresh after creation</button><p>This practice button saves nothing. It runs the steps that follow a confirmed save in another form.</p></section></section>
+</main><footer>COMP2245 supporting lab 2 • Fictional classroom accounts only</footer></body></html>

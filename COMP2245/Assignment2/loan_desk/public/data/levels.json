@@ -1,0 +1,22 @@
+{
+  "borrower": [
+    {
+      "code": "B1",
+      "name": "Standard borrower"
+    },
+    {
+      "code": "B2",
+      "name": "Extended access borrower"
+    }
+  ],
+  "technician": [
+    {
+      "code": "T1",
+      "name": "Equipment assistant"
+    },
+    {
+      "code": "T2",
+      "name": "Senior technician"
+    }
+  ]
+}

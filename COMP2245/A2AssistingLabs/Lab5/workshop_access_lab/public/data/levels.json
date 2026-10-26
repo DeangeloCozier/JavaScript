@@ -1,0 +1,22 @@
+{
+  "learner": [
+    {
+      "code": "intro",
+      "name": "Introduction to Making"
+    },
+    {
+      "code": "tools",
+      "name": "Tool Safety"
+    }
+  ],
+  "coach": [
+    {
+      "code": "repair",
+      "name": "Repair Workshop"
+    },
+    {
+      "code": "design",
+      "name": "Design Workshop"
+    }
+  ]
+}

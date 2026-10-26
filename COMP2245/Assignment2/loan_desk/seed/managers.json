@@ -1,0 +1,16 @@
+[
+  {
+    "managerId": "M001",
+    "firstName": "Rhea",
+    "lastName": "King",
+    "email": "rhea@uwi.edu",
+    "password": "ManageDesk26$"
+  },
+  {
+    "managerId": "M002",
+    "firstName": "Omar",
+    "lastName": "Ward",
+    "email": "omar@cavehill.uwi.edu",
+    "password": "OmarManager26#"
+  }
+]

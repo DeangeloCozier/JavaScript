@@ -1,0 +1,35 @@
+[
+    {
+        "bookingCode": "N1001",
+        "displayName": "Morgan",
+        "email": "morgan@example.org",
+        "participantType": "newcomer",
+        "orientationDate": "2025-01-01",
+        "locationCode": "hall",
+        "trackCode": "intro",
+        "collectionPoint": "east",
+        "deliveryNote": ""
+    },
+    {
+        "participantType": "newcomer",
+        "bookingCode": "N4657",
+        "displayName": "Lena",
+        "orientationDate": "2025-02-02",
+        "locationCode": "hall",
+        "trackCode": "intro",
+        "collectionPoint": "east",
+        "email": "lena@example.org",
+        "deliveryNote": ""
+    },
+    {
+        "participantType": "newcomer",
+        "bookingCode": "N9440",
+        "displayName": "Lena",
+        "orientationDate": "2026-10-25",
+        "locationCode": "hall",
+        "trackCode": "intro",
+        "collectionPoint": "east",
+        "email": "lena2@example.org",
+        "deliveryNote": ""
+    }
+]
