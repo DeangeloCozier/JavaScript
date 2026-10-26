@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Workshop Booking</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/validation.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/app.js" defer></script></head>
+<body><header><img src="workshop.svg" alt="Community workshop" width="44" height="44">
+<div><h1>Community Workshop Booking</h1><p>COMP2245 supporting lab 1</p></div></header>
+<main><p id="status" role="status" aria-live="polite">Starter ready. Begin Part 1 in your lab guide.</p>
+<label class="coordinator"><input id="coordinator" type="checkbox" checked> Coordinator mode (a supplied classroom access check)</label>
+<section id="welcomeView"><h2>Workshop desk</h2><p>Book a fictional participant into a local workshop.</p>
+<button id="newBooking" type="button">New booking</button>
+<h3>Current bookings</h3><p>This supplied table lets you test layout and see that the server saved a booking.</p>
+<div class="table-scroll"><table><thead><tr><th>Code</th><th>Name</th><th>Type</th><th>Track</th><th>Location</th></tr></thead><tbody id="bookingRows"></tbody></table></div></section>
+<section id="bookingView" hidden><h2>New workshop booking</h2>
+<form id="bookingForm" action="api/bookings.php" method="post" novalidate>
+<input name="formPurpose" type="hidden" value="workshop-booking">
+<div class="form-grid">
+<div class="field"><label for="participantType">Participant type</label><select id="participantType" name="participantType"><option value="newcomer">Newcomer</option><option value="returning">Returning</option></select><small id="participantTypeError" class="error"></small></div>
+<div class="field"><label for="bookingCode">Booking code</label><div class="code-controls"><input id="bookingCode" name="bookingCode" readonly><button id="generateCode" type="button">Generate</button></div><small id="bookingCodeError" class="error"></small></div>
+<div class="field"><label for="displayName">Display name (one word)</label><input id="displayName" name="displayName" type="text"><small id="displayNameError" class="error"></small></div>
+<div class="field"><label for="email">Fictional email (@example.org)</label><input id="email" name="email" type="email"><small id="emailError" class="error"></small></div>
+<div class="field"><label for="passphrase">Fictional passphrase</label><input id="passphrase" name="passphrase" type="password"><small id="passphraseError" class="error"></small></div>
+<div class="field"><label for="confirmPhrase">Confirm passphrase</label><input id="confirmPhrase" name="confirmPhrase" type="password"><small id="confirmPhraseError" class="error"></small></div>
+<div class="field"><label for="deliveryNote">Delivery note (optional)</label><input id="deliveryNote" name="deliveryNote" type="text"><small id="deliveryNoteError" class="error"></small></div>
+<div class="field"><label for="orientationDate">Safety orientation date</label><input id="orientationDate" name="orientationDate" type="date"><small id="orientationDateError" class="error"></small></div>
+<div class="field"><label for="locationCode">Location</label><div id="locationControl"><select id="locationCode" name="locationCode"><option value="">Choose one</option></select></div><small id="locationCodeError" class="error"></small></div>
+<div class="field"><label for="trackCode">Workshop track</label><div id="trackControl"><select id="trackCode" name="trackCode"><option value="">Choose one</option></select></div><small id="trackCodeError" class="error"></small></div>
+</div>
+<fieldset id="collectionGroup"><legend>Collection point</legend><label><input type="radio" name="collectionPoint" value="east"> East desk</label><label><input type="radio" name="collectionPoint" value="west"> West desk</label><small id="collectionPointError" class="error"></small></fieldset>
+<p id="formMessage" role="status" aria-live="polite"></p>
+<div class="actions"><button id="bookButton" type="submit">Book place</button><button id="cancelBooking" type="button">Cancel</button></div>
+</form></section></main></body></html>

@@ -1,0 +1,27 @@
+/* The narrow-screen layout is supplied. Complete CSS1 in Part 1. */
+* { box-sizing: border-box; }
+body { margin: 0; font: 1rem/1.5 Arial, sans-serif; color: #192c3b; background: #f7f9fb; }
+header, main { width: min(100% - 2rem, 64rem); margin: 1.5rem auto; }
+header { display: flex; align-items: center; gap: 1rem; }
+h1 { font-size: 1.6rem; margin: 0; } h2 { margin-top: 1rem; }
+section { background: white; padding: 1.25rem; border: 1px solid #c6d0d7; border-radius: .35rem; }
+[hidden] { display: none !important; }
+label { display: block; } .coordinator { margin: 1rem 0; }
+.form-grid { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; }
+.field { min-width: 0; width: 100%; }
+input:not([type=checkbox]):not([type=radio]), select { width: 100%; min-width: 0; padding: .55rem; border: 1px solid #6b7b87; border-radius: .2rem; font: inherit; }
+.code-controls { display: flex; gap: .5rem; } .code-controls input { flex: 1; }
+button { font: inherit; padding: .55rem .85rem; border: 1px solid #315468; border-radius: .2rem; background: #244e66; color: white; cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid #be6f12; outline-offset: 2px; }
+fieldset { margin: 1rem 0; border: 1px solid #6b7b87; }
+fieldset label { display: inline-block; margin-right: 1rem; }
+.error { color: #9d2020; display: block; min-height: 1.25rem; }
+.invalid { border: 2px solid #b32828 !important; }
+.actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+th, td { border: 1px solid #c6d0d7; padding: .55rem; text-align: left; }
+th { background: #e6edf2; }
+/* CSS1: at a minimum width of 768px, set .field width to calc(50% - 0.6rem).
+   Two fields and the supplied 1.2rem gap then fit on the same Flexbox row. */

@@ -1,0 +1,22 @@
+{
+  "newcomer": [
+    {
+      "code": "intro",
+      "name": "Introduction to Making"
+    },
+    {
+      "code": "tools",
+      "name": "Tool Safety"
+    }
+  ],
+  "returning": [
+    {
+      "code": "repair",
+      "name": "Repair Workshop"
+    },
+    {
+      "code": "design",
+      "name": "Design Workshop"
+    }
+  ]
+}
