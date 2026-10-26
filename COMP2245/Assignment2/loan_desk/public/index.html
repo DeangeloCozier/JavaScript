@@ -63,23 +63,23 @@
 
         <main>
 
-        <header class="pageHeader">
-            <div class="menuArea">
-                <button type="button" class="menuToggle">Menu</button>
-                <div class="menuList hidden">
-                    <button type="button" class="homeButton">Home</button>
-                    <button type="button" class="unclickable">Equipment Catalogue</button>
+            <header class="pageHeader">
+                <div class="menuArea">
+                    <button type="button" class="menuToggle">Menu</button>
+                    <div class="menuList hidden">
+                        <button type="button" class="homeButton">Home</button>
+                        <button type="button" class="unclickable">Equipment Catalogue</button>
+                    </div>
                 </div>
-            </div>
-            <div class="titleBlock">
-                <h2>Campus Equipment Loan Desk</h2>
-                <p class="campus">U.W.I Cave Hill Campus</p>
-            </div>
+                <div class="titleBlock">
+                    <h2>Campus Equipment Loan Desk</h2>
+                    <p class="campus">U.W.I Cave Hill Campus</p>
+                </div>
 
-            <div class="logo">
-                <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
-            </div>
-        </header>
+                <div class="logo">
+                    <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+                </div>
+            </header>
 
             <h2 class="title">Borrower Login</h2>
             <p id="borrowerError" class="message error" aria-live="polite"></p>
@@ -525,11 +525,39 @@
 
     <section id="borrowerRegistrationView" class="view">
         <div class="top-bar">
-            <h1>BORROWER REGISTRATION</h1>
+            <div class="circles">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1> Borrower Registration</h1>
         </div>
 
         <main>
-            <h2 class="title">Register New Borrower</h2>
+
+            <header class="pageHeader">
+                <div class="menuArea">
+                    <button type="button" class="menuToggle">Menu</button>
+                    <div class="menuList hidden">
+                        <button type="button" class="homeButton">Home</button>
+                        <button type="button" class="unclickable">Equipment Catalogue</button>
+                        <button type="button" class="signOutButton">Sign Out</button>   
+                    </div>
+                </div>
+                <div class="titleBlock">
+                    <h2>Campus Equipment Loan Desk</h2>
+                    <p class="campus">U.W.I Cave Hill Campus</p>
+                </div>
+
+                <div class="logo">
+                    <img src="logo.png" alt="Campus Equipment Loan Desk logo">   
+                </div>
+            </header>
+
+            <h2 class="title">New Borrower</h2>
+            <p id="newBorrowerError" class="message error" aria-live="polite"></p>
+
 
             <form id="borrowerRegistrationForm"
                 action="borrower/new"
@@ -537,18 +565,133 @@
 
                 <input type="hidden" name="role" value="borrower">
 
-                <div class="field">
-                    <label for="newStudentId">Student ID</label>
-                    <input id="newStudentId"
-                        name="studentId"
-                        type="text"
-                        readonly>
+                <!-- <div class="form-grid">
+                    <label for="newStudentId">Student ID *</label>
+                    <input id="newStudentId" name="studentId" type="text" value="USR-9842" readonly>
+                    <button type="button" id="generateBorrowerId">Generate</button>
 
-                    <button type="button" id="generateBorrowerId">
-                        Generate
-                    </button>
+                    <label>Email *</label>
+                    <input type="email" placeholder="Enter email..." class="wide">
+
+                    <label>First Name *</label>
+                    <input type="text" class="wide">
+
+                    <label>Last Name *</label>
+                    <input type="text" class="wide">
+
+                    <label>Password *</label>
+                    <input type="password" class="wide">
+
+                    <label>Confirm Password *</label>
+                    <input type="password" class="wide">
+
+                    <label>Address 1 *</label>
+                    <input type="password" class="wide">
+
+                    <label>Address 2 (optional)</label>
+                    <input type="password" class="wide">
+
+                    <label for="parish">Parish *</label>
+                        <select id="parish" name="parishes">
+                            <option value="michael">St.Michael</option>
+                            <option value="james"d>St. James</option>
+                            <option value="lucy">St.Lucy</option>
+                        </select>
+
+                </div> -->
+
+                 <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="studentId">Student ID</label>
+
+                        <div class="code-controls">
+                            <input id="studentId"
+                                name="studentId"
+                                type="text"
+                                readonly>
+
+                            <button id="generateBorrowerId"
+                                    type="button">
+                                Generate
+                            </button>
+                        </div>
+
+                        <small id="bookingCodeError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email">
+                        <small id="emailError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" name="firstName" type="text">
+                        <small id="firstNameError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" name="lastName" type="text">
+                        <small id="lastNameError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password">
+                        <small id="passwordError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input id="confirmPassword"
+                            name="confirmPassword"
+                            type="password">
+                        <small id="confirmPasswordError" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="address1">Address 1</label>
+                        <input id="address1" name="address1" type="text">
+                        <small id="address1Error" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="address2">Address 2 (optional)</label>
+                        <input id="address2" name="address2" type="text">
+                        <small id="address2Error" class="error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="parish">Parish</label>
+                        <select id="parish" name="parish">
+                            <option value="">Choose a parish</option>
+                            <option value="michael">St. Michael</option>
+                            <option value="james">St. James</option>
+                            <option value="lucy">St. Lucy</option>
+                        </select>
+                        <small id="parishError" class="error"></small>
+                    </div>
+
+                    <div class="form-field"><label for="campusAffiliationDate">Campus affiliation start date * </label><input id="campusAffiliationDate" name="campusAffiliationDate" type="date"><small id="ocampusAffiliationDateError" class="error"></small></div>
+                    
+                    <div class="form-field">
+                        <label for="accesslevel">Access level *</label>
+                        <select id="accesslevel" name="accesslevel">
+                            <option value="">Choose one</option>
+                            <option value="level1">Level 1</option>
+                            <option value="level2">Level 2</option>
+                            <option value="level3">Level 3</option>
+                        </select>
+                        <small id="accesslevelError" class="error"></small>
+                    </div>
+
+                    <fieldset id="collectionGroup"><legend>Preferred collection point *</legend><label><input type="radio" name="collectionPoint" value="east">Main Desk</label><label><input type="radio" name="collectionPoint" value="west">Media lab</label><small id="collectionPointError" class="error"></small></fieldset>
+
                 </div>
-
+                
                 <button type="submit">Register</button>
                 <button type="button" id="cancelBorrowerRegistration">
                     Cancel
